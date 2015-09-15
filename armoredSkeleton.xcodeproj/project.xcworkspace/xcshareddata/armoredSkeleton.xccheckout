@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>FB9FCA9E-3FA3-4E9E-88A3-30C705274201</string>
+	<key>IDESourceControlProjectName</key>
+	<string>armoredSkeleton</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>CB4B31E137080C54C3DA0559C38D9489A373E431</key>
+		<string>https://github.com/satorupan/armoredSkeleton.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>armoredSkeleton.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>CB4B31E137080C54C3DA0559C38D9489A373E431</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/satorupan/armoredSkeleton.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>CB4B31E137080C54C3DA0559C38D9489A373E431</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>CB4B31E137080C54C3DA0559C38D9489A373E431</string>
+			<key>IDESourceControlWCCName</key>
+			<string>armoredSkeleton</string>
+		</dict>
+	</array>
+</dict>
+</plist>
