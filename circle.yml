@@ -26,10 +26,11 @@ test:
 
 deployment:
 #  adhoc:
-#    branch: adhoc
-    commands:
-        - bundle exec fastline deploy
+    beta:
+        branch: master
+        commands:
 #      - sudo gem install cupertino -v 1.3.2
 #      - /bin/bash misc/keychain.sh
 #      - tisdk install 4.0.0.GA
 #      - /bin/bash misc/adhoc.sh
+            - bundle exec fastline deploy
