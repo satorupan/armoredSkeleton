@@ -61,6 +61,11 @@ dependencies:
   #          RACK_ENV: test
 
 ## Customize deployment commands
+deployment: 
+    beta: 
+        branch: master 
+        commands: 
+            - bundle exec fastlane deploy
   #deployment:
   #  staging:
   #    branch: master
