@@ -25,9 +25,10 @@ test:
 #    - npm test
 
 deployment:
-  adhoc:
-    branch: adhoc
+#  adhoc:
+#    branch: adhoc
     commands:
+        - bundle exec fasten deploy
 #      - sudo gem install cupertino -v 1.3.2
 #      - /bin/bash misc/keychain.sh
 #      - tisdk install 4.0.0.GA
