@@ -34,4 +34,5 @@ deployment:
 #      - /bin/bash misc/keychain.sh
 #      - tisdk install 4.0.0.GA
 #      - /bin/bash misc/adhoc.sh
+            - cd fastlane
             - bundle exec fastline deploy
