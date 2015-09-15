@@ -9,7 +9,7 @@ machine:
 #    version: "0.10.34"
   environment:
     XCODE_SCHEME: armoredSkeleton
-    XCODE_PROJECT: armoredSkeleton.xcworkspace
+#    XCODE_PROJECT: armoredSkeleton.xcworkspace
 
 dependencies:
   pre:
@@ -22,6 +22,7 @@ test:
 #    - gulp jshint
 #     - alloy compile --config platform=ios
   override:
+#        - xcodebuild test -scheme armoredSkeleton -workspace armoredSkeleton.xcworkspace 
 #    - npm test
 
 deployment:
