@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 
-#import <Repro/Repro.h>
+//#import <Repro/Repro.h>
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
 
@@ -24,8 +24,8 @@
     // Override point for customization after application launch.
     [Fabric with:@[[Crashlytics class]]];
     
-    [Repro setup:@"8a77eee5-aff8-47dd-954f-e8888c4bdf68"];
-    [Repro startRecording];
+    //[Repro setup:@"8a77eee5-aff8-47dd-954f-e8888c4bdf68"];
+    //[Repro startRecording];
 
     return YES;
 }
