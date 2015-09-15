@@ -8,8 +8,8 @@ machine:
 #  node:
 #    version: "0.10.34"
   environment:
-    XCODE_SCHEME: App
-    XCODE_PROJECT: App.xcodeproj
+    XCODE_SCHEME: armoredSkeleton
+    XCODE_PROJECT: armoredSkeleton.xcodeproj
 
 dependencies:
   pre:
