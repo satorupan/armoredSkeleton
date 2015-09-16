@@ -20,9 +20,13 @@ deployment:
     beta:
         branch: master
         commands:
-            - /bin/bash misc/keychain.sh
+            - security create-keychain -p circle #{KEYCHAIN_NAME}
+            - security import #{APPLE_CERTIFICATE_PATH} -k #{KEYCHAIN_NAME} -T /usr/bin/codesign
+            - security import #{DISTRIBUTION_CER_PATH} -k #{KEYCHAIN_NAME} -T /usr/bin/codesign
+            - security import #{DISTRIBUTION_P12_PATH} -k #{KEYCHAIN_NAME} -P #{P12_PASSPHRASE} -T /usr/bin/codesign
+            - security default-keychain -s #{KEYCHAIN_NAME}
+
+#            - /bin/bash misc/keychain.sh
             -   bundle exec fastlane deploy
-                environment:
-                APPNAME: OnAirLog813
-                DEPLOYGATE_DISTRIBUTION_KEY: $ONAIRLOG813_DEPLOYGATE_DISTRIBUTION_KEY
+            
             - ./Crashlytics.framework/submit 5bdbe9ae6136390bc29a6acb9e1dd772d61ec229 fd5426806991b769ee69e8cdfb5f925cb6d45367e68b531342b1d7fc0d776562 -emails satorupan@icloud.com notifications YES -ipaPath ./armoredSkeleton.ipa
