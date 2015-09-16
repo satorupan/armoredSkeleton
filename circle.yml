@@ -21,6 +21,6 @@ deployment:
         branch: master
         commands:
             - /bin/bash misc/keychain.sh
-            -  bundle exec fastlane deploy
+            -  bundle exec fastlane inhouse
             - /bin/bash misc/adhoc.sh
             
