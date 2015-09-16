@@ -14,7 +14,7 @@ machine:
 
 dependencies:
   pre:
-    - pod install
+#    - pod install
 #      - /bin/bash misc/keychain.sh
 #    - npm install -g titanium alloy tisdk
 #    - npm install
