@@ -57,20 +57,23 @@ platform :ios do
     # frameit
   end
   
+  ########################################
+  
   desc "社内向け配信"
   lane :inhouse do
     sigh(
       adhoc: true,
     )
-    PROVISIONING_PROFILE = "$(PROFILE_UDID)";
+    PROVISIONING_PROFILE = "$(PROVISIONING_PROFILE)";
     gym(
-      configuration: 'Release',
+      scheme: 'Release',
     )
   end
   
+  ########################################
 
   # You can define as many lanes as you want
-
+  
   after_all do |lane|
     # This block is called, only if the executed lane was successful
     
@@ -86,7 +89,6 @@ platform :ios do
     # )
   end
 end
-
 
 # More information about multiple platforms in fastlane: 
 # https://github.com/KrauseFx/fastlane/blob/master/docs/Platforms.md
