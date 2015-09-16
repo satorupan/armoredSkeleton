@@ -10,7 +10,7 @@ machine:
 #    version: "0.10.34"
   environment:
     XCODE_SCHEME: armoredSkeleton
-    XCODE_PROJECT: armoredSkeleton.xcodeproj
+#    XCODE_PROJECT: armoredSkeleton.xcodeproj
 
 dependencies:
   pre:
