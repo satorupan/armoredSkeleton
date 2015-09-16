@@ -32,7 +32,8 @@ deployment:
     beta:
         branch: master
         commands:
-        - /bin/bash misc/keychain.sh
+            -   bundle exec fasten deploy
+ #       - /bin/bash misc/keychain.sh
 #      - sudo gem install cupertino -v 1.3.2
 #      - /bin/bash misc/keychain.sh
 #      - tisdk install 4.0.0.GA
