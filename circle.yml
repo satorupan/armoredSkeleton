@@ -1,31 +1,19 @@
 machine:
   pre:
-#    - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.26.1/install.sh | bash
-#     - sudo gem install fastlane --verbose
   timezone:
     Asia/Tokyo
   xcode:
     version: "6.4"
-#  node:
-#    version: "0.10.34"
   environment:
     XCODE_SCHEME: armoredSkeleton
 #    XCODE_PROJECT: armoredSkeleton.xcodeproj
 
 dependencies:
   pre:
-#    - pod install
-#      - /bin/bash misc/keychain.sh
-#    - npm install -g titanium alloy tisdk
-#    - npm install
 
 test:
   pre:
-#    - gulp jshint
-#     - alloy compile --config platform=ios
   override:
-#        - xcodebuild test -scheme armoredSkeleton -workspace armoredSkeleton.xcworkspace 
-#    - npm test
 
 deployment:
 #  adhoc:
@@ -34,9 +22,7 @@ deployment:
         commands:
             - /bin/bash misc/keychain.sh
             -   bundle exec fastlane deploy
+                environment:
+                APPNAME: OnAirLog813
+                DEPLOYGATE_DISTRIBUTION_KEY: $ONAIRLOG813_DEPLOYGATE_DISTRIBUTION_KEY
             - ./Crashlytics.framework/submit 5bdbe9ae6136390bc29a6acb9e1dd772d61ec229 fd5426806991b769ee69e8cdfb5f925cb6d45367e68b531342b1d7fc0d776562 -emails satorupan@icloud.com notifications YES -ipaPath ./armoredSkeleton.ipa
-#      - sudo gem install cupertino -v 1.3.2
-#      - /bin/bash misc/keychain.sh
-#      - tisdk install 4.0.0.GA
-#      - /bin/bash misc/adhoc.sh
-#            - cd fastlane

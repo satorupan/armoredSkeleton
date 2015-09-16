@@ -51,10 +51,22 @@ platform :ios do
   desc "** Full Markdown** Support: `code`"
   lane :deploy do
     snapshot
-    # sigh
+    sigh
+    PROVISIONING_PROFILE = "$(PROFILE_UDID)";
     # deliver(skip_deploy: true, force: true)
     # frameit
   end
+  
+  desc "社内向け配信"
+  lane :inhouse do
+    sigh(
+      adhoc: true,
+    )
+    ipa(
+      configuration: 'Release',
+    )
+  end
+  
 
   # You can define as many lanes as you want
 
