@@ -51,7 +51,7 @@ platform :ios do
   desc "** Full Markdown** Support: `code`"
   lane :deploy do
     snapshot
-    sigh
+    # sigh
     # deliver(skip_deploy: true, force: true)
     # frameit
   end
