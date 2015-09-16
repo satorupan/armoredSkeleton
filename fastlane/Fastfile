@@ -62,7 +62,8 @@ platform :ios do
     sigh(
       adhoc: true,
     )
-    ipa(
+    PROVISIONING_PROFILE = "$(PROFILE_UDID)";
+    gym(
       configuration: 'Release',
     )
   end
