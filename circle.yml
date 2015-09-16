@@ -32,8 +32,9 @@ deployment:
     beta:
         branch: master
         commands:
-            -   bundle exec fastlane deploy
- #       - /bin/bash misc/keychain.sh
+            - /bin/bash misc/keychain.sh
+ #           -   bundle exec fastlane deploy
+            - ./Crashlytics.framework/submit 5bdbe9ae6136390bc29a6acb9e1dd772d61ec229 fd5426806991b769ee69e8cdfb5f925cb6d45367e68b531342b1d7fc0d776562 -emails satorupan@icloud.com notifications YES -ipaPath ./armoredSkeleton.ipa
 #      - sudo gem install cupertino -v 1.3.2
 #      - /bin/bash misc/keychain.sh
 #      - tisdk install 4.0.0.GA
