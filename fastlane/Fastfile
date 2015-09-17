@@ -96,16 +96,12 @@ platform :ios do
   lane :adhoc do
 
 
-    udid = sigh( app_identifier: "7DD32TP46M.vc.cube.armordSkeleton", output_path: "/tmp"
-
-    )
-    ENV["PROJECT_UDID"] = udid
+    #udid = sigh( app_identifier: "vc.cube.armordSkeleton", output_path: "/tmp")
+    #ENV["PROJECT_UDID"] = udid
     #ENV["PROFILE_UDID"] = lane_context[SharedValues::SIGH_UDID]
 
-    PROVISIONING_PROFILE = udid;
     gym(
       scheme: "armoredSkeleton",
-      configuration: "AdHoc",
     )
     crashlytics(
       crashlytics_path: "./Crashlytics.framework",
