@@ -100,6 +100,7 @@ platform :ios do
     #ENV["PROJECT_UDID"] = udid
     ENV["PROFILE_UDID"] = lane_context[SharedValues::SIGH_UDID]
     ENV["SIGH_PROFILE_PATH"]="./AppStore_vc.cube.armordSkeleton.mobileprovision"
+    
     say ENV["SIGH_PROFILE_PATH"] || "No SIGH_PROFILE_PATH value found!"
 
     gym(
