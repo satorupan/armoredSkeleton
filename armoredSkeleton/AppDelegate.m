@@ -9,8 +9,8 @@
 #import "AppDelegate.h"
 
 //#import <Repro/Repro.h>
-#import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
+#import <Fabric/Fabric.h>
 
 
 @interface AppDelegate ()
