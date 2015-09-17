@@ -97,27 +97,13 @@ platform :ios do
 
   lane :adhoc do
 
-    delete_keychain(name: "Bot") rescue nil
-
-    create_keychain(
-      name: "Bot",
-      password: 'cube999',
-      default_keychain: true,
-      unlock: true,
-      timeout: 3600,
-      lock_when_sleeps: true
-    )
-
-    sigh( app_identifier: "vc.cube.armordSkeleton",adhoc: true)
+    cert
+    sigh( adhoc: true)
     #ENV["PROJECT_UDID"] = udid
     ENV["PROFILE_UDID"] = lane_context[SharedValues::SIGH_UDID]
 
+    gym(scheme: "armoredSkeleton", workspace: 'armoredSkeleton.xcworkspace')
 
-    gym(
-      configuration: 'Release',
-      scheme: "armoredSkeleton",
-      provisioning_profile_path: "./AppStore_vc.cube.armordSkeleton.mobileprovision",
-    )
     crashlytics(
       crashlytics_path: "./Crashlytics.framework",
       groups: "phi",
