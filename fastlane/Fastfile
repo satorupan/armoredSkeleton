@@ -96,9 +96,9 @@ platform :ios do
 
   lane :adhoc do
 
-    udid=sigh( app_identifier: "vc.cube.armordSkeleton", output_path: "/tmp")
-    ENV["PROJECT_UDID"] = udid
-    #ENV["PROFILE_UDID"] = lane_context[SharedValues::SIGH_UDID]
+    sigh( app_identifier: "vc.cube.armordSkeleton")
+    #ENV["PROJECT_UDID"] = udid
+    ENV["PROFILE_UDID"] = lane_context[SharedValues::SIGH_UDID]
     say ENV["SIGH_PROFILE_PATH"] || "No SIGH_PROFILE_PATH value found!"
     gym(
       scheme: "armoredSkeleton",
