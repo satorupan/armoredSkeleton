@@ -97,7 +97,18 @@ platform :ios do
 
   lane :adhoc do
 
-    sigh( app_identifier: "vc.cube.armordSkeleton")
+    delete_keychain(name: "Bot") rescue nil
+
+    create_keychain(
+      name: "Bot",
+      password: 'cube999',
+      default_keychain: true,
+      unlock: true,
+      timeout: 3600,
+      lock_when_sleeps: true
+    )
+
+    sigh( app_identifier: "vc.cube.armordSkeleton",adhoc: true)
     #ENV["PROJECT_UDID"] = udid
     ENV["PROFILE_UDID"] = lane_context[SharedValues::SIGH_UDID]
 

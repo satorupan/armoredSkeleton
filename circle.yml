@@ -19,5 +19,4 @@ deployment:
     beta:
         branch: master
         commands:
-            - /bin/bash scripts/keychain.sh
             -  bundle exec fastlane adhoc
