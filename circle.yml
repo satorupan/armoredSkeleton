@@ -10,7 +10,7 @@ machine:
 
 dependencies:
   pre:
-
+  	- bundle install
 test:
   pre:
   override:
