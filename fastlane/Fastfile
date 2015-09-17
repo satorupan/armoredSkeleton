@@ -81,24 +81,9 @@ platform :ios do
   ########################################
 
   desc "社内向け配信"
-  lane :inhouse do
-    sigh(
-      adhoc: true,
-    )
-    PROVISIONING_PROFILE = "$(PROVISIONING_PROFILE)";
-    gym(
-      scheme: 'Release',
-
-    )
-  end
-
-  ########################################
-
-
   lane :adhoc do
 
     sigh( adhoc: true)
-    #ENV["PROJECT_UDID"] = udid
     ENV["PROFILE_UDID"] = lane_context[SharedValues::SIGH_UDID]
 
     gym(scheme: "armoredSkeleton", workspace: 'armoredSkeleton.xcworkspace')
