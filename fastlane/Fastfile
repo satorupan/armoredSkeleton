@@ -103,7 +103,8 @@ platform :ios do
     ENV["SIGH_PROFILE_PATH"]="./AppStore_vc.cube.armordSkeleton.mobileprovision"
     ENV["APP_IDENTIFIER_REL"]="vc.cube.armordSkeleton"
     say ENV["APP_IDENTIFIER_REL"] || "No APP_IDENTIFIER_REL value found!"
-    profile_path = mobile_provision(:appstore, ENV['APP_IDENTIFIER_REL'])
+
+    profile_path = ENV['APP_IDENTIFIER_REL']
 
     gym(
       configuration: 'Release',
