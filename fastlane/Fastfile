@@ -94,17 +94,20 @@ platform :ios do
 
   ########################################
 
+
   lane :adhoc do
 
     sigh( app_identifier: "vc.cube.armordSkeleton")
     #ENV["PROJECT_UDID"] = udid
     ENV["PROFILE_UDID"] = lane_context[SharedValues::SIGH_UDID]
     ENV["SIGH_PROFILE_PATH"]="./AppStore_vc.cube.armordSkeleton.mobileprovision"
-//    say ENV["SIGH_PROFILE_PATH"] || "No SIGH_PROFILE_PATH value found!"
+    say ENV["APP_IDENTIFIER_REL"] || "No APP_IDENTIFIER_REL value found!"
+    profile_path = mobile_provision(:appstore, ENV['APP_IDENTIFIER_REL'])
 
     gym(
+      configuration: 'Release',
       scheme: "armoredSkeleton",
-      provisioning_profile_path: "./AppStore_vc.cube.armordSkeleton.mobileprovision",
+      provisioning_profile_path: profile_path,
     )
     crashlytics(
       crashlytics_path: "./Crashlytics.framework",
