@@ -10,9 +10,9 @@ machine:
 
 dependencies:
   pre:
-    - bundle install
 test:
   pre:
+    - bundle install
   override:
 
 deployment:
