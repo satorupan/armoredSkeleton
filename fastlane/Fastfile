@@ -96,7 +96,7 @@ platform :ios do
   lane :adhoc do
 
 
-    udid = sigh( app_identifier: "vc.cube.armordSkeleton"
+    udid = sigh( app_identifier: "7DD32TP46M.vc.cube.armordSkeleton", output_path: "/tmp"
 
     )
     ENV["PROJECT_UDID"] = udid
