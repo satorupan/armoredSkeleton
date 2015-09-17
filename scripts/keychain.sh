@@ -15,10 +15,3 @@ security import $DIR/apple.cer -k $KEYCHAIN -T /usr/bin/codesign
 security list-keychain -s $KEYCHAIN
 security unlock-keychain -p "$KEYCHAIN_PASSWORD" $KEYCHAIN
 rm -rf $DIR
-
-PROVISIONING=~/Library/MobileDevice/Provisioning\ Profiles
-mkdir -p "$PROVISIONING"
-bundle exec ios profiles:download:all --type distribution -u $APPLE_DEVELOPER_ID -p $APPLE_DEVELOPER_PASSWORD --team "$DISTRIBUTION_NAME"
-echo "./App.mobileprovision -> $PROVISIONING_PROFILE.mobileprovision"
-mv ./App.mobileprovision "$PROVISIONING/$PROVISIONING_PROFILE.mobileprovision"
-rm -rf *.mobileprovision
