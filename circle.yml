@@ -19,5 +19,6 @@ deployment:
     beta:
         branch: master
         commands:
+            - sudo gem update gym
             - /bin/bash scripts/keychain.sh
             -  bundle exec fastlane adhoc
