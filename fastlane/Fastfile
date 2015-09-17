@@ -97,7 +97,6 @@ platform :ios do
 
   lane :adhoc do
 
-    cert(team_id: '7DD32TP46M')
     sigh( adhoc: true)
     #ENV["PROJECT_UDID"] = udid
     ENV["PROFILE_UDID"] = lane_context[SharedValues::SIGH_UDID]
