@@ -20,6 +20,5 @@ deployment:
     beta:
         branch: master
         commands:
-            - ./scripts/add-key.sh
+            - /bin/bash scripts/add-key.sh
             -  bundle exec fastlane adhoc
-            — ./scripts/remove-key.sh
