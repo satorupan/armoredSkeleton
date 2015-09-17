@@ -85,16 +85,15 @@ platform :ios do
 
     sigh( adhoc: true)
     ENV["PROFILE_UDID"] = lane_context[SharedValues::SIGH_UDID]
-
     gym(scheme: "armoredSkeleton", workspace: 'armoredSkeleton.xcworkspace')
 
 
 
     crashlytics(
       crashlytics_path: "./Pods/Crashlytics/Crashlytics.framework",
-      groups: "$(CLASHLYTICS_GROUP_ALIASE)",
-      api_token: "$(CLASHLYTICS_API_KEY)",
-      build_secret:  "$(CLASHLYTICS_BUILD_SECRET)",
+      groups: ENV["CLASHLYTICS_GROUP_ALIASE"],
+      api_token: ENV["CLASHLYTICS_GROUP_ALIASE"],
+      build_secret:  ENV["CLASHLYTICS_BUILD_SECRET"],
       notifications: true
     )
   end
