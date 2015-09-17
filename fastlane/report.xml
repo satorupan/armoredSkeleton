@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites name="fastlane">
   <testsuite name="deploy">
-    <testcase name="0: Verifying required fastlane version" time="0.000448"/>
-    <testcase name="1: default_platform" time="0.000161"/>
-    <testcase name="2: sigh" time="6.241246"/>
-    <testcase name="3: gym" time="41.904204"/>
-    <testcase name="4: crashlytics" time="8.577175"/>
+    <testcase name="0: Verifying required fastlane version" time="0.000289"/>
+    <testcase name="1: default_platform" time="0.000209"/>
+    <testcase name="2: gym" time="54.692198"/>
+    <testcase name="3: crashlytics" time="7.456668"/>
   </testsuite>
 </testsuites>
