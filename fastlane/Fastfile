@@ -105,7 +105,7 @@ platform :ios do
     gym(scheme: "armoredSkeleton", workspace: 'armoredSkeleton.xcworkspace')
 
     crashlytics(
-      crashlytics_path: "./Crashlytics.framework",
+      crashlytics_path: "./Pods/Crashlytics/Crashlytics.framework",
       groups: "phi",
       api_token: "5bdbe9ae6136390bc29a6acb9e1dd772d61ec229",
       build_secret: "fd5426806991b769ee69e8cdfb5f925cb6d45367e68b531342b1d7fc0d776562",
