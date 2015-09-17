@@ -15,8 +15,6 @@
 		AEE17E481BA66E89005E5D2E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEE17E471BA66E89005E5D2E /* Images.xcassets */; };
 		AEE17E4B1BA66E89005E5D2E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEE17E491BA66E89005E5D2E /* LaunchScreen.xib */; };
 		AEE17E571BA66E89005E5D2E /* armoredSkeletonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE17E561BA66E89005E5D2E /* armoredSkeletonTests.m */; };
-		AEE17E631BA6720E005E5D2E /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE17E611BA6720E005E5D2E /* Fabric.framework */; };
-		AEE17E641BA6720E005E5D2E /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE17E621BA6720E005E5D2E /* Crashlytics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,8 +44,6 @@
 		AEE17E501BA66E89005E5D2E /* armoredSkeletonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = armoredSkeletonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEE17E551BA66E89005E5D2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AEE17E561BA66E89005E5D2E /* armoredSkeletonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = armoredSkeletonTests.m; sourceTree = "<group>"; };
-		AEE17E611BA6720E005E5D2E /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
-		AEE17E621BA6720E005E5D2E /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,8 +51,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AEE17E641BA6720E005E5D2E /* Crashlytics.framework in Frameworks */,
-				AEE17E631BA6720E005E5D2E /* Fabric.framework in Frameworks */,
 				83B34EB8667F4A752DD761E6 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -110,8 +104,6 @@
 				AEE17E441BA66E88005E5D2E /* Main.storyboard */,
 				AEE17E471BA66E89005E5D2E /* Images.xcassets */,
 				AEE17E491BA66E89005E5D2E /* LaunchScreen.xib */,
-				AEE17E611BA6720E005E5D2E /* Fabric.framework */,
-				AEE17E621BA6720E005E5D2E /* Crashlytics.framework */,
 				AEE17E3A1BA66E88005E5D2E /* Supporting Files */,
 			);
 			path = armoredSkeleton;
