@@ -26,7 +26,7 @@ platform :ios do
     # ENV["SLACK_URL"] = "https://hooks.slack.com/services/..."
     # increment_build_number
 
-    gym(scheme: "armoredSkeleton", workspace: "armoredSkeleton.xcworkspace") # Build your app - more options available
+    # gym(scheme: "armoredSkeleton", workspace: "armoredSkeleton.xcworkspace") # Build your app - more options available
 
     # xctool # run the tests of your app
   end
@@ -38,14 +38,36 @@ platform :ios do
 
   desc "Submit a new Beta Build to Apple TestFlight"
   desc "This will also make sure the profile is up to date"
-  lane :beta do
-    snapshot
-    sigh
-    deliver(beta: true)
+	lane :beta do
 
-    # sh "your_script.sh"
-    # You can also use other beta testing services here
-  end
+	    create_keychain(
+	      default_keychain: true,
+	      unlock: true,
+	      timeout: 3600,
+	      lock_when_sleeps: true
+	    )
+
+		import_certificate certificate_path: "Resources/ios_distribution.cer"
+    	import_certificate certificate_path: "Resources/ios_distribution.p12", certificate_password: ENV["cube999"]
+		# Download provisioning profiles
+		sigh(
+#			app_identifier: "vc.cube.armoredSkeleton",
+#			adhoc: true
+		)
+		ENV["PROFILE_UDID"] = lane_context[SharedValues::SIGH_UDID]
+		# Build
+	    gym(
+	      scheme: "armoredSkeleton",
+	    )
+		# Push to Crashlytics
+		crashlytics(
+			crashlytics_path: "./Crashlytics.framework",
+			groups: "phi"
+		)
+	end
+
+
+
 
   desc "Deploy a new version to the App Store"
   desc "** Full Markdown** Support: `code`"
@@ -56,9 +78,9 @@ platform :ios do
     # deliver(skip_deploy: true, force: true)
     # frameit
   end
-  
+
   ########################################
-  
+
   desc "社内向け配信"
   lane :inhouse do
     sigh(
@@ -69,14 +91,35 @@ platform :ios do
       scheme: 'Release',
     )
   end
-  
+
+  ########################################
+
+  lane :adhoc do
+
+
+    sigh(
+    )
+    ENV["e0d61152-2f3c-4b98-ada9-d8418b355038"] = lane_context[SharedValues::SIGH_UDID]
+    gym(
+      scheme: "armoredSkeleton",
+      configuration: "AdHoc",
+    )
+    crashlytics(
+      crashlytics_path: "./Crashlytics.framework",
+      groups: "phi",
+      api_token: "5bdbe9ae6136390bc29a6acb9e1dd772d61ec229",
+      build_secret: "fd5426806991b769ee69e8cdfb5f925cb6d45367e68b531342b1d7fc0d776562",
+      notifications: true
+    )
+  end
+
   ########################################
 
   # You can define as many lanes as you want
-  
+
   after_all do |lane|
     # This block is called, only if the executed lane was successful
-    
+
     # slack(
     #   message: "Successfully deployed new App Update."
     # )
@@ -90,5 +133,5 @@ platform :ios do
   end
 end
 
-# More information about multiple platforms in fastlane: 
+# More information about multiple platforms in fastlane:
 # https://github.com/KrauseFx/fastlane/blob/master/docs/Platforms.md
