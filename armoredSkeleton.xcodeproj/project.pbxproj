@@ -440,7 +440,7 @@
 				INFOPLIST_FILE = armoredSkeleton/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "$(PROFILE_UDID)";
+				PROVISIONING_PROFILE = "e86af5e3-fe74-4daf-a867-a66ced396573";
 			};
 			name = Debug;
 		};
@@ -458,7 +458,7 @@
 				INFOPLIST_FILE = armoredSkeleton/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "$(PROFILE_UDID)";
+				PROVISIONING_PROFILE = "e86af5e3-fe74-4daf-a867-a66ced396573";
 			};
 			name = Release;
 		};
