@@ -96,8 +96,11 @@ platform :ios do
   lane :adhoc do
 
 
-    sigh()
-    ENV["PROFILE_UDID"] = lane_context[SharedValues::SIGH_UDID]
+    udid = sigh(
+        app_identifier: "vc.cube.armoredSkeleton", output_path: "/tmp"
+    )
+    ENV["PROJECT_UDID"] = udid
+    #ENV["PROFILE_UDID"] = lane_context[SharedValues::SIGH_UDID]
     gym(
       scheme: "armoredSkeleton",
       configuration: "AdHoc",
