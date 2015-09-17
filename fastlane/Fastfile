@@ -96,9 +96,10 @@ platform :ios do
   lane :adhoc do
 
 
-    #sigh(
-    #)
-    ENV["e0d61152-2f3c-4b98-ada9-d8418b355038"] = lane_context[SharedValues::SIGH_UDID]
+    sigh()
+    ENV["PROFILE_UDID"] = lane_context[SharedValues::SIGH_UDID]
+
+    #ENV["e0d61152-2f3c-4b98-ada9-d8418b355038"] = lane_context[SharedValues::SIGH_UDID]
     gym(
       scheme: "armoredSkeleton",
       configuration: "AdHoc",
