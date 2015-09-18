@@ -22,5 +22,3 @@ deployment:
             - sudo gem update gym
             - /bin/bash scripts/keychain.sh
             -  bundle exec fastlane adhoc
-            -  bundle exec fastlane commit_version_bump
-            -  bundle exec fastlane push_to_git_remote

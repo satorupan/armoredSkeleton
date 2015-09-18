@@ -99,6 +99,13 @@ platform :ios do
       notifications: true
     )
     
+	commit_version_bump( {xcodeproj: "armoredSkeleton.xcodeproj", message: "Deploying version #{version_number}.",force: true
+	})
+	
+	puts "after testingf"
+	add_git_tag tag: version_number
+	push_to_git_remote
+    
   end
 
   ########################################
