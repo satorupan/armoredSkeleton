@@ -103,7 +103,6 @@ platform :ios do
 	})
 	
 	puts "after testingf"
-	add_git_tag tag: version_number
 	push_to_git_remote
     
   end
