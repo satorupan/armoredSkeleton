@@ -99,7 +99,7 @@ platform :ios do
       notifications: true
     )
     
-	commit_version_bump( {xcodeproj: "armoredSkeleton.xcodeproj", message: "Deploying version #{version_number}.",force: true
+	commit_version_bump( {xcodeproj: "armoredSkeleton.xcodeproj", message: "Deploying version ",force: true
 	})
 	
 	puts "after testingf"
