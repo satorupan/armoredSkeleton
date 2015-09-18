@@ -102,6 +102,7 @@ platform :ios do
 	commit_version_bump( {xcodeproj: "armoredSkeleton.xcodeproj", message: "Deploying version ",force: true
 	})
 	
+	puts "after testingf"
 	push_to_git_remote
     
   end
