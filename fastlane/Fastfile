@@ -47,7 +47,7 @@ platform :ios do
 	    )
 
 		import_certificate certificate_path: "Resources/ios_distribution.cer"
-    	import_certificate certificate_path: "Resources/ios_distribution.p12", certificate_password: ENV["cube999"]
+    	import_certificate certificate_path: "Resources/ios_distribution.p12", certificate_password: ENV["P12KEY_PASSWORD"]
 		# Download provisioning profiles
 		sigh(
 #			app_identifier: "vc.cube.armoredSkeleton",
@@ -64,9 +64,6 @@ platform :ios do
 			groups: "phi"
 		)
 	end
-
-
-
 
   desc "Deploy a new version to the App Store"
   desc "** Full Markdown** Support: `code`"
@@ -88,11 +85,10 @@ platform :ios do
     gym(scheme: "armoredSkeleton", workspace: 'armoredSkeleton.xcworkspace')
 
 
-
     crashlytics(
       crashlytics_path: "./Pods/Crashlytics/Crashlytics.framework",
       groups: ENV["CLASHLYTICS_GROUP_ALIASE"],
-      api_token: ENV["CLASHLYTICS_GROUP_ALIASE"],
+      api_token: ENV["CLASHLYTICS_API_KEY"],
       build_secret:  ENV["CLASHLYTICS_BUILD_SECRET"],
       notifications: true
     )
