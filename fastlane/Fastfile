@@ -85,6 +85,7 @@ platform :ios do
     ENV["PROFILE_UDID"] = lane_context[SharedValues::SIGH_UDID]
     gym(scheme: "armoredSkeleton", workspace: 'armoredSkeleton.xcworkspace')
 
+
     crashlytics(
       crashlytics_path: "./Pods/Crashlytics/Crashlytics.framework",
       groups: ENV["CLASHLYTICS_GROUP_ALIASE"],
@@ -92,9 +93,6 @@ platform :ios do
       build_secret:  ENV["CLASHLYTICS_BUILD_SECRET"],
       notifications: true
     )
-    
-	commit_version_bump
-	push_to_git_remote
   end
 
   ########################################
