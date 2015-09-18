@@ -81,10 +81,15 @@ platform :ios do
   desc "社内向け配信"
   lane :adhoc do
 
+    increment_build_number(
+		xcodeproj: 'armoredSkeleton.xcodeproj' 
+	)
+    increment_version_number(
+		xcodeproj: 'armoredSkeleton.xcodeproj' 
+	)
     sigh( adhoc: true)
     ENV["PROFILE_UDID"] = lane_context[SharedValues::SIGH_UDID]
     gym(scheme: "armoredSkeleton", workspace: 'armoredSkeleton.xcworkspace')
-
 
     crashlytics(
       crashlytics_path: "./Pods/Crashlytics/Crashlytics.framework",
@@ -93,6 +98,7 @@ platform :ios do
       build_secret:  ENV["CLASHLYTICS_BUILD_SECRET"],
       notifications: true
     )
+    
   end
 
   ########################################
