@@ -21,6 +21,7 @@ build/
 /rdoc/
 
 ## Environment normalisation:
+
 /.bundle/
 /lib/bundler/man/
 
@@ -43,6 +44,7 @@ spec/fixtures/*.itmsp/*.png
 spec/fixtures/fastfiles/report.xml
 fastlane/report.xml
 
+vendor
 
 armoredSkeleton.app.dSYM.zip
 *.ipa
